@@ -4,7 +4,7 @@ Smart locker management system developed as a portfolio project to demonstrate f
 
 > **Note:** This project was developed as part of my personal portfolio to showcase my .NET development capabilities.
 
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET-5.0-black?style=for-the-badge&logo=.net)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-10.0-black?style=for-the-badge&logo=.net)
 ![C#](https://img.shields.io/badge/C%23-10.0-purple?style=for-the-badge&logo=c-sharp)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-blue?style=for-the-badge&logo=bootstrap)
 ![SQL Server](https://img.shields.io/badge/SQL_Server-2019-red?style=for-the-badge&logo=microsoft-sql-server)
@@ -52,7 +52,7 @@ Smart locker management system developed as a portfolio project to demonstrate f
 
 | Category | Technology |
 |----------|-----------|
-| **Backend** | ASP.NET Core 5.0, C#, Entity Framework Core |
+| **Backend** | ASP.NET Core 10, C#, Entity Framework Core |
 | **Frontend** | Razor Pages, Bootstrap 5, Bootstrap Icons |
 | **Database** | SQL Server / SQLite |
 | **Authentication** | ASP.NET Core Identity |
@@ -106,7 +106,13 @@ Smart locker management system developed as a portfolio project to demonstrate f
 
 2. **Configure connection string**
    
+
+
    Edit `appsettings.json`:
+   
+    > The SMTP settings below are placeholders for demonstration purposes only.
+    > Never commit real passwords, API keys or credentials to the repository.
+   
    ```json
    {
      "ConnectionStrings": {
@@ -177,7 +183,8 @@ The system includes an email notification service that sends:
 - ✅ Expired rental notifications
 - ✅ Rental end confirmations
 
-**Configuration:** SMTP credentials are configurable via `appsettings.json` and the system fails gracefully if email sending fails.
+**Configuration:** SMTP settings are configurable through application configuration.
+The values shown above are placeholders only. The system fails gracefully if email sending fails.
 
 ---
 
@@ -258,11 +265,18 @@ This is a personal portfolio project, but feedback is always welcome!
 
 ---
 
+## License
+
+This is a public portfolio project shared for demonstration and educational purposes.
+No open-source license is currently granted.
+
+---
+
 ## 👨‍💻 Author
 
 **[Tiago Ribeiro]**
 
-- **LinkedIn:** [linkedin.com/in/tiago-ribeiro1988](www.linkedin.com/in/tiago-ribeiro1988)
+- **LinkedIn:** [linkedin.com/in/tiago-ribeiro1988](https://www.linkedin.com/in/tiago-ribeiro1988/)
 - **GitHub:** [github.com/tiagompribeiro88/](https://github.com/tiagompribeiro88/)
 - **Email:** tiagopribeiro@proton.me
 
