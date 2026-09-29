@@ -225,30 +225,6 @@ if (rental == null || rental.Locker == null)
 
 ---
 
-## 🚀 Deployment
-
-### Option 1: Azure App Service
-
-1. Publish to Azure via Visual Studio
-2. Configure connection string in Azure Portal
-3. Configure EmailSettings in Application Settings
-
-### Option 2: Railway
-
-1. Create account at [railway.app](https://railway.app)
-2. Connect GitHub repository
-3. Add environment variables
-4. Automatic deployment
-
-### Option 3: Render
-
-1. Create account at [render.com](https://render.com)
-2. Create Web Service
-3. Configure build and start commands
-4. Add environment variables
-
----
-
 ## 📊 Database
 
 ### Main Entities
