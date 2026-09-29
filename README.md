@@ -57,7 +57,7 @@ Smart locker management system developed as a portfolio project to demonstrate f
 | **Database** | SQL Server / SQLite |
 | **Authentication** | ASP.NET Core Identity |
 | **Email** | SMTP (configurable) |
-| **Deploy** | Azure App Service / Railway / Render |
+| **Deploy** (not implemented)  | Azure App Service / Railway / Render |
 
 ---
 
@@ -100,7 +100,7 @@ Smart locker management system developed as a portfolio project to demonstrate f
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/24LockyLockers.git
+   git clone https://github.com/tiagompribeiro88/24LockyLockers.git
    cd 24LockyLockers
    ```
 
@@ -255,12 +255,6 @@ This is a personal portfolio project, but feedback is always welcome!
 3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open Pull Request
-
----
-
-## 📝 License
-
-This project is open source and available under the MIT License.
 
 ---
 
