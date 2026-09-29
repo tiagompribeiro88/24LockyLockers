@@ -1,0 +1,521 @@
+/* Google Fonts - Poppins for modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Root variables for consistent theming */
+:root {
+    --primary-color: #4e54c8;
+    --secondary-color: #8f94fb;
+    --accent-color: #ffd700;
+    --dark-bg: #1a1a2e;
+    --light-text: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* Body and base styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    background-image: url('/images/Lockers3.png');
+    background-position: center;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-size: auto 60%;
+    font-family: 'Poppins', sans-serif;
+    color: var(--light-text);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar - Glassmorphism effect */
+.navbar {
+    background: rgba(26, 26, 46, 0.95) !important;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #c0c0c0; /* Silver */
+    transition: all 0.3s ease;
+}
+
+    .navbar-brand:hover {
+        color: #a8a8a8; /* Darker silver */
+        transform: scale(1.05);
+    }
+
+    .navbar-brand i {
+        color: #c0c0c0; /* Silver icon */
+        margin-right: 8px;
+    }
+
+/* Navigation links */
+.nav-link {
+    color: #c0c0c0; /* Silver */
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    margin: 0 2px;
+    border-radius: 8px;
+}
+
+    .nav-link:hover {
+        color: #a8a8a8; /* Darker silver on hover */
+        background: rgba(192, 192, 192, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .nav-link i {
+        margin-right: 6px;
+        color: inherit; /* Icon follows link color */
+    }
+
+/* Main content area */
+.main-content {
+    flex: 1;
+    padding: 3rem 0;
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: var(--card-bg);
+    overflow: hidden;
+    position: relative;
+}
+
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+.card-body {
+    padding: 2rem;
+    color: #333;
+}
+
+    .card-body h3,
+    .card-body h4,
+    .card-body h5,
+    .card-body p {
+        color: #333;
+    }
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Button styling */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(78, 84, 200, 0.4);
+    color: white;
+}
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(78, 84, 200, 0.6);
+        color: white;
+    }
+
+.btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    color: white;
+    background: transparent;
+}
+
+    .btn-outline-light:hover {
+        background: var(--accent-color);
+        border-color: var(--accent-color);
+        color: var(--dark-bg);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+    }
+
+/* Form styling */
+.form-control {
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 14px 18px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+}
+
+    .form-control:focus {
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
+        background: white;
+    }
+
+.form-label {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
+}
+
+    .footer span {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+    }
+
+/* Dropdown menu */
+.dropdown-menu {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(26, 26, 46, 0.98);
+    backdrop-filter: blur(15px);
+    padding: 0.5rem;
+}
+
+.dropdown-item {
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    padding: 0.7rem 1rem;
+}
+
+    .dropdown-item:hover {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+    }
+
+/* Table styling */
+.table {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+    .table thead {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+    }
+
+        .table thead th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 1rem;
+        }
+
+    .table tbody td {
+        padding: 1rem;
+        color: #333;
+        border-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .table tbody tr:hover {
+        background: rgba(78, 84, 200, 0.05);
+    }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+/* Page sections */
+.page-header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .main-content {
+        padding: 2rem 0;
+    }
+}
+
+.locker-pt-opo .page-header {
+    background: url('/images/Porto.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.locker-pt-lis .page-header {
+    background: url('/images/Lisboa.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.locker-pt-cpb .page-header {
+    background: url('/images/Coimbra.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.locker-es-bcn .page-header {
+    background: url('/images/Barcelona.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.locker-es-mad .page-header {
+    background: url('/images/Madrid.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.locker-es-scq .page-header {
+    background: url('/images/Santiago Compostela.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-body {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1.5rem;
+}
+
+.location-link {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+    .location-link:last-child {
+        border-bottom: none;
+    }
+
+    .location-link a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        display: block;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+    }
+
+        .location-link a:hover {
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        /* Icons nos links */
+        .location-link a i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+/* ========================================
+   ADMIN EDIT/DELETE PAGES STYLES
+   ======================================== */
+
+/* Edit Forms */
+.form-locky {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    .form-locky h2 {
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-locky .form-label {
+        font-weight: 500;
+        color: #555;
+    }
+
+    .form-locky .form-control,
+    .form-locky .form-select {
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        padding: 0.6rem 1rem;
+        transition: all 0.3s ease;
+    }
+
+        .form-locky .form-control:focus,
+        .form-locky .form-select:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+            outline: none;
+        }
+
+    .form-locky .btn-locky-primary {
+        background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .form-locky .btn-locky-primary:hover {
+            background: linear-gradient(135deg, #0b5ed7 0%, #0a58ca 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+        }
+
+    .form-locky .btn-outline-secondary {
+        border: 2px solid #6c757d;
+        color: #6c757d;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .form-locky .btn-outline-secondary:hover {
+            background: #6c757d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+/* Delete Pages */
+.delete-confirmation {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #dc3545;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(220, 53, 69, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    .delete-confirmation h4 {
+        color: #dc3545;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .delete-confirmation .badge {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .delete-confirmation .btn-danger {
+        background: linear-gradient(135deg, #dc3545 0%, #bb2d3b 100%);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .delete-confirmation .btn-danger:hover {
+            background: linear-gradient(135deg, #bb2d3b 0%, #a52834 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+        }
+
+    .delete-confirmation .btn-outline-secondary {
+        border: 2px solid #6c757d;
+        color: #6c757d;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .delete-confirmation .btn-outline-secondary:hover {
+            background: #6c757d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+    .delete-confirmation dl.row {
+        margin-bottom: 1.5rem;
+    }
+
+        .delete-confirmation dl.row dt {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .delete-confirmation dl.row dd {
+            color: #333;
+        }
+
+
+/* Account pages links - visible on dark background */
+.account-link {
+    color: #c0c0c0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .account-link:hover {
+        color: #a8a8a8;
+        text-decoration: underline;
+    }

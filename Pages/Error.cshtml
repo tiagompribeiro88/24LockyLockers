@@ -1,0 +1,29 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="container">
+    <div class="page-header">
+        <h1><i class="bi bi-exclamation-triangle-fill text-warning"></i> Oops! Something went wrong</h1>
+        <p class="text-white-50">We're sorry, but an unexpected error occurred.</p>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-8 mx-auto">
+            <div class="card border-warning">
+                <div class="card-body text-center">
+                    <i class="bi bi-tools" style="font-size: 4rem; color: #ffc107;"></i>
+                    <h3 class="mt-4">We're working on it!</h3>
+                    <p class="text-muted">Our team has been notified and we're fixing the issue.</p>
+
+                    <div class="mt-4">
+                        <a href="/" class="btn btn-primary">Go Home</a>
+                        <a href="javascript:history.back()" class="btn btn-outline-secondary">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

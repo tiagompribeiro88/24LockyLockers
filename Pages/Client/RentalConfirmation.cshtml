@@ -1,0 +1,48 @@
+﻿@page
+@model _24LockyLockers.Pages.Client.RentalConfirmationModel
+@{
+    ViewData["Title"] = "Rental Confirmed";
+}
+
+<div class="container">
+    <div class="page-header">
+        <h1><i class="bi bi-check-circle-fill text-success"></i> Rental Confirmed!</h1>
+        <p class="text-white-50">Your locker is ready to use</p>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Locker @TempData["LockerNumber"]</h4>
+                    
+                    <div class="alert alert-success mt-4">
+                        <h5><i class="bi bi-key-fill"></i> Your Access Code:</h5>
+                        <h1 class="display-4 fw-bold">@TempData["AccessCode"]</h1>
+                        <p class="text-muted">Use this code to unlock your locker</p>
+                    </div>
+
+                    @* QR Code *@
+                    <div class="mt-4">
+                        <h5><i class="bi bi-qr-code"></i> Scan to Unlock:</h5>
+                        <img src="@Model.QrCodeImage" alt="QR Code" class="img-fluid" style="max-width: 200px;" />
+                        <p class="text-muted small">Show this QR code at the locker</p>
+                    </div>
+
+                    <div class="alert alert-info mt-4">
+                        <p class="mb-0"><strong>Price paid:</strong> €@TempData["Price"]</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <a asp-page="/Client/Index" class="btn btn-primary">
+                            <i class="bi bi-house"></i> Back to Dashboard
+                        </a>
+                        <a asp-page="/Client/MyRentals" class="btn btn-outline-primary">
+                            <i class="bi bi-list-ul"></i> View My Rentals
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

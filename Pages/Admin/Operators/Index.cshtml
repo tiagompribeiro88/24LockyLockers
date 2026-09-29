@@ -1,0 +1,51 @@
+﻿@page
+@model _24LockyLockers.Pages.Admin.Operators.IndexModel
+@{
+    ViewData["Title"] = "Manage Operators";
+}
+
+<h2 class="mb-4">Manage Operators</h2>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <a asp-page="Create" class="btn btn-locky-primary">
+        <i class="bi bi-plus-lg"></i> Add Operator
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-locky">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var op in Model.Operators)
+            {
+                <tr>
+                    <td>@op.Name</td>
+                    <td>@op.Email</td>
+                    <td>
+                        @if (op.IsActive)
+                        {
+                            <span class="badge bg-success">Active</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Inactive</span>
+                        }
+                    </td>
+                    <td>@op.CreatedAt.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@op.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <a asp-page="Delete" asp-route-id="@op.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

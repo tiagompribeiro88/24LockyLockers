@@ -1,0 +1,28 @@
+﻿@page
+@model _24LockyLockers.Pages.Pickups.IndexModel
+@{
+    ViewData["Title"] = "Pickup Parcel";
+}
+
+<h2 class="mb-4">Pickup a Parcel</h2>
+
+<div class="form-locky">
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Input.Code" class="form-label">Access Code</label>
+            <input asp-for="Input.Code" class="form-control" placeholder="1234" maxlength="4">
+            <span asp-validation-for="Input.Code" class="text-danger"></span>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-locky-primary">Pickup Parcel</button>
+        </div>
+    </form>
+</div>
+
+@if (!string.IsNullOrEmpty(TempData["SuccessMessage"] as string))
+{
+    <div class="alert alert-success alert-locky mt-4">
+        @TempData["SuccessMessage"]
+    </div>
+}

@@ -1,0 +1,40 @@
+﻿@page
+@model _24LockyLockers.Pages.Admin.Users.IndexModel
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<h2 class="mb-4">Manage Users</h2>
+
+<div class="table-responsive">
+    <table class="table table-locky">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.Email</td>
+                    <td>
+                        @if (user.Roles.Any())
+                        {
+                            @string.Join(", ", user.Roles)
+                        }
+                        else
+                        {
+                            <span class="text-muted">No roles</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@user.Id" class="btn btn-sm btn-outline-primary">Edit Roles</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

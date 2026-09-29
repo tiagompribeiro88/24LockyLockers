@@ -1,0 +1,51 @@
+﻿@page
+@model _24LockyLockers.Pages.Admin.Lockers.IndexModel
+@{
+    ViewData["Title"] = "Manage Lockers";
+}
+
+<h2 class="mb-4">Manage Lockers</h2>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <a asp-page="Create" class="btn btn-locky-primary">
+        <i class="bi bi-plus-lg"></i> Add Locker
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-locky">
+        <thead>
+            <tr>
+                <th>Locker Number</th>
+                <th>Status</th>
+                <th>Current Code</th>
+                <th>Last Used</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var locker in Model.Lockers)
+            {
+                <tr>
+                    <td>@locker.LockerNumber</td>
+                    <td>
+                        @if (locker.IsAvailable)
+                        {
+                            <span class="badge bg-success">Available</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Occupied</span>
+                        }
+                    </td>
+                    <td>@(locker.CurrentCode ?? "-")</td>
+                    <td>@(locker.LastUsed?.ToString("dd/MM/yyyy HH:mm") ?? "-")</td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@locker.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <a asp-page="Delete" asp-route-id="@locker.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

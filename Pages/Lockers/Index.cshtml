@@ -1,0 +1,72 @@
+﻿@page
+@model _24LockyLockers.Pages.Lockers.IndexModel
+@{
+    ViewData["Title"] = "View Lockers";
+}
+
+<div class="container @Model.LocationClass">
+    <div class="page-header">
+        <h1>@Model.DisplayName</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Available Lockers</h4>
+
+                    @if (!Model.Lockers.Any())
+                    {
+                        <p class="text-muted">No lockers available at this location.</p>
+                    }
+                    else
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Locker Number</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var locker in Model.Lockers)
+                                    {
+                                        <tr>
+                                            <td>@locker.LockerNumber</td>
+                                            <td>
+                                                @if (locker.IsAvailable)
+                                                {
+                                                    <span class="badge bg-success">Available</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-danger">Occupied</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (locker.IsAvailable && User.Identity?.IsAuthenticated == true)
+                                                {
+                                                    <a asp-page="/Client/Rent" asp-route-lockerId="@locker.Id" class="btn btn-sm btn-primary">Reserve</a>
+                                                }
+                                                else if (locker.IsAvailable)
+                                                {
+                                                    <a asp-page="/Account/Login" asp-route-returnUrl="/Client/Rent?lockerId=@locker.Id" class="btn btn-sm btn-primary">Reserve</a>
+                                                }
+                                                else
+                                                {
+                                                    <button class="btn btn-sm btn-secondary" disabled>Unavailable</button>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

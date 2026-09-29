@@ -1,0 +1,101 @@
+﻿@page
+@{
+    ViewData["Title"] = "About 24LockyLockers";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <!-- Header with Image -->
+            <div class="text-center mb-5">
+                <img src="~/images/Lockers2.png" alt="24LockyLockers" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: cover;" />
+            </div>
+
+            <h1 class="text-center mb-4">About This Project</h1>
+
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-3">🎯 The Goal</h4>
+                    <p class="card-text">
+                        24LockyLockers was built as part of my Full-Stack Developer training at Cegid Academy.
+                        The idea was to create a real-world application that solves a common problem:
+                        finding and renting lockers at airports and train stations.
+                    </p>
+                    <p class="card-text">
+                        Travelers often struggle with luggage storage while waiting for flights or trains.
+                        This system makes it easy to browse available lockers, rent them securely,
+                        and manage rentals through a simple web interface.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-3">🛠️ What I Learned</h4>
+                    <p class="card-text">
+                        This project helped me practice and understand several key concepts in web development:
+                    </p>
+                    <ul>
+                        <li><strong>ASP.NET Core Razor Pages</strong> - Building clean, server-rendered web pages</li>
+                        <li><strong>Entity Framework Core</strong> - Working with databases using Code-First approach</li>
+                        <li><strong>Authentication & Authorization</strong> - Implementing secure user roles (Client, Operator, Admin)</li>
+                        <li><strong>Email Integration</strong> - Sending automated notifications via SMTP</li>
+                        <li><strong>Background Services</strong> - Running scheduled tasks for rental expiration alerts</li>
+                        <li><strong>QR Code Generation</strong> - Creating scannable codes for locker access</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-3">🚀 Challenges & Solutions</h4>
+                    <p class="card-text">
+                        One of the biggest challenges was ensuring that the rental flow worked smoothly
+                        from start to finish. I had to think carefully about:
+                    </p>
+                    <ul>
+                        <li>How to handle users who aren't logged in when they try to rent</li>
+                        <li>How to generate unique access codes for each rental</li>
+                        <li>How to prevent double-booking of the same locker</li>
+                        <li>How to send timely email notifications without blocking the main app</li>
+                    </ul>
+                    <p class="card-text">
+                        Each of these problems taught me something new about building robust web applications.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-3">📚 Technologies Used</h4>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-primary">ASP.NET Core 10</span>
+                        <span class="badge bg-primary">Razor Pages</span>
+                        <span class="badge bg-success">Entity Framework Core</span>
+                        <span class="badge bg-info">SQLite</span>
+                        <span class="badge bg-warning">ASP.NET Identity</span>
+                        <span class="badge bg-danger">SMTP Email</span>
+                        <span class="badge bg-secondary">QRCoder</span>
+                        <span class="badge bg-dark">Bootstrap 5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Image -->
+            <div class="text-center mt-5">
+                <img src="~/images/Lockers1.png" alt="Lockers" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: cover;" />
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="/Account/Login" class="btn btn-primary btn-lg px-4">
+                    <i class="bi bi-box-arrow-in-right"></i> Try It Now
+                </a>
+                <a href="https://github.com/your-username/24lockylockers" class="btn btn-outline-dark btn-lg px-4 ms-2">
+                    <i class="bi bi-github"></i> View Code
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

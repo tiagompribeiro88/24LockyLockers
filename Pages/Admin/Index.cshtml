@@ -1,0 +1,38 @@
+﻿@page
+@model _24LockyLockers.Pages.Admin.IndexModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h1>Admin Dashboard</h1>
+<p>Bem-vindo, Admin!</p>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Lockers</h5>
+                <p class="card-text">Gerir lockers do sistema.</p>
+                <a asp-page="/Admin/Lockers/Index" class="btn btn-primary">Gerir Lockers</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Operators</h5>
+                <p class="card-text">Gerir operadores.</p>
+                <a asp-page="/Admin/Operators/Index" class="btn btn-primary">Gerir Operators</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Users</h5>
+                <p class="card-text">Ver utilizadores registados.</p>
+                <a asp-page="/Admin/Users/Index" class="btn btn-primary">Ver Users</a>
+            </div>
+        </div>
+    </div>
+</div>

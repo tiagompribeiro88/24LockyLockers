@@ -1,0 +1,70 @@
+﻿@page "{lockerId:int?}"
+@model _24LockyLockers.Pages.Client.RentModel
+@{
+    ViewData["Title"] = "Rent Locker";
+}
+
+<div class="container">
+    <div class="page-header">
+        <h1>Rent Locker</h1>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <a asp-page="/Client/Index" class="btn btn-outline-light">
+                <i class="bi bi-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    @if (Model.Locker != null)
+                    {
+                        <h4 class="card-title">Locker @Model.Locker.LockerNumber</h4>
+                        <p class="card-text">Location: @Model.Locker.Location?.LocationName</p>
+
+                        <div class="alert alert-info">
+                            <h5><i class="bi bi-info-circle-fill"></i> Rental Details</h5>
+                            <ul class="mb-0">
+                                <li>Price: <strong>€@Model.Price.ToString("F2")</strong></li>
+                                <li>Duration: Until you return the key</li>
+                                <li>Access: Digital code sent after payment</li>
+                            </ul>
+                        </div>
+
+                        <form method="post">
+                            <input type="hidden" name="lockerId" value="@Model.Locker.Id" />
+
+                            <div class="mb-3">
+                                <label class="form-label">Payment Method</label>
+                                <select class="form-select" name="paymentMethod" required>
+                                    <option value="">Select...</option>
+                                    <option value="card">Credit/Debit Card</option>
+                                    <option value="mbway">MB WAY</option>
+                                    <option value="paypal">PayPal</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="bi bi-credit-card"></i> Pay €@Model.Price.ToString("F2") & Rent
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            Locker not found or not available.
+                        </div>
+                        <a asp-page="/Client/Index" class="btn btn-primary">
+                            <i class="bi bi-arrow-left"></i> Back to Dashboard
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

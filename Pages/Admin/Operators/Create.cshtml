@@ -1,0 +1,38 @@
+﻿@page
+@model _24LockyLockers.Pages.Admin.Operators.CreateModel
+@{
+    ViewData["Title"] = "Add Operator";
+}
+
+<h2 class="mb-4">Add New Operator</h2>
+
+<div class="form-locky">
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="Input.Name" class="form-label">Name</label>
+            <input asp-for="Input.Name" class="form-control" placeholder="John Doe">
+            <span asp-validation-for="Input.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Input.Email" class="form-label">Email</label>
+            <input asp-for="Input.Email" class="form-control" placeholder="john@example.com">
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Input.IsActive" class="form-label">Status</label>
+            <select asp-for="Input.IsActive" class="form-select">
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+            </select>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-locky-primary">Add Operator</button>
+            <a asp-page="Index" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

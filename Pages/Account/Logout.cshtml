@@ -1,0 +1,20 @@
+﻿@page
+@model _24LockyLockers.Pages.Account.LogoutModel
+@{
+    ViewData["Title"] = "Logout";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            <h2>Logout</h2>
+            <p>A sair...</p>
+            <form method="post">
+                <button type="submit" class="btn btn-primary">Confirmar Logout</button>
+            </form>
+            <div class="mt-3">
+                <a asp-page="/Index">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</div>

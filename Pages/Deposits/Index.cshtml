@@ -1,0 +1,35 @@
+﻿@page
+@model _24LockyLockers.Pages.Deposits.IndexModel
+@{
+    ViewData["Title"] = "Deposit Parcel";
+}
+
+<h2 class="mb-4">Deposit a Parcel</h2>
+
+<div class="form-locky">
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Input.LockerNumber" class="form-label">Locker Number</label>
+            <select asp-for="Input.LockerNumber" asp-items="Model.AvailableLockers" class="form-select">
+                <option value="">-- Select a locker --</option>
+            </select>
+            <span asp-validation-for="Input.LockerNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Input.RecipientName" class="form-label">Recipient Name</label>
+            <input asp-for="Input.RecipientName" class="form-control" placeholder="John Doe">
+            <span asp-validation-for="Input.RecipientName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Input.RecipientEmail" class="form-label">Recipient Email</label>
+            <input asp-for="Input.RecipientEmail" class="form-control" placeholder="john@example.com">
+            <span asp-validation-for="Input.RecipientEmail" class="text-danger"></span>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-locky-primary">Deposit Parcel</button>
+        </div>
+    </form>
+</div>
