@@ -290,6 +290,6 @@ No open-source license is currently granted.
 
 ---
 
-**Project Status:** ✅ Complete and portfolio-ready
+**Project Status:** ✅  Improved now and then :)
 
 **Last updated:** September 2026
